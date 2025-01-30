@@ -3,6 +3,7 @@ import express from 'express'
 import { showNumberIsPositive } from './satge1/task1-1.js'
 import { showLength } from './satge1/task1-2.js'
 import { showLastSymbol } from './satge1/task1-3.js'
+import { showNumberIsEven } from './satge1/task1-4.js'
 import {showNumberIsPositive} from './satge1/task1-1.js'
 const app = express()
 const port = 3000
@@ -40,6 +41,14 @@ let handleLastSymbol = (req, res) => {
 }
 
 app.get('/chek-last-symbol', handleLastSymbol)
+
+let handleNumberIsEven = (req, res) => {
+  console.log("hi: ", req.query)
+  let value = showNumberIsEven(Number(req.query.number))
+  res.send(value)
+}
+
+app.get('/chek-number-is-even', handleNumberIsEven)
 
 app.get('/chek-number-is-positive', handler)
 
