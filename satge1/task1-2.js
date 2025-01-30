@@ -1,10 +1,11 @@
-function showLenght(str) {
+export function showLength(str) {
     if (!str) {
         throw new Error("'str' должна быть определена");
     } else if (typeof str !== 'string') {
         throw new Error("'str'должна быть строкой");
     }  else {
         console.log(str.length);
+        return str.length;
     }
 }
         
