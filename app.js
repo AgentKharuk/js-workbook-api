@@ -2,6 +2,7 @@ import bodyParser from 'body-parser'
 import express from 'express'
 import { showNumberIsPositive } from './satge1/task1-1.js'
 import { showLength } from './satge1/task1-2.js'
+import { showLastSymbol } from './satge1/task1-3.js'
 import {showNumberIsPositive} from './satge1/task1-1.js'
 const app = express()
 const port = 3000
@@ -16,11 +17,13 @@ var x = {
   "age": 30
 }
 
-let handler = (req, res) => {
+let handleNumberIsPositive = (req, res) => {
   console.log("hi: ", req.query)
   let value = showNumberIsPositive(Number(req.query.number))
   res.send(value)
 }
+
+app.get('/chek-number-is-positive', handleNumberIsPositive)
 
 let handleShowLength = (req, res) => {
   console.log("hi: ", req.query)
@@ -29,6 +32,14 @@ let handleShowLength = (req, res) => {
 }
 
 app.get('/chek-string-length', handleShowLength)
+
+let handleLastSymbol = (req, res) => {
+  console.log("hi: ", req.query)
+  let value = showLastSymbol(req.query.str)
+  res.send('last symbol of the string is: ' + value)
+}
+
+app.get('/chek-last-symbol', handleLastSymbol)
 
 app.get('/chek-number-is-positive', handler)
 
