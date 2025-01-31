@@ -6,6 +6,8 @@ import { showLastSymbol } from './satge1/task1-3.js'
 import { showNumberIsEven } from './satge1/task1-4.js'
 import { showEqualityFirstCharInWords } from './satge1/task1-5.js'
 import { showLastCharExceptSoftSign } from './satge1/task1-6.js'
+import { showFirstCharOfNumber } from './stage2/task2-1.js'
+
 const app = express()
 const port = 3000
 const { json } = bodyParser
@@ -66,6 +68,14 @@ let handleLastCharExceptSoftSign = (req, res) => {
 }
 
 app.get('/chek-last-char-expect-soft-sign', handleLastCharExceptSoftSign)
+
+let handleFirstCharOfNumber = (req, res) => {
+  console.log("hi: ", req.query)
+  let value = showFirstCharOfNumber(req.query.num)
+  res.send(value)
+}
+
+app.get('/chek-first-char-of-number', handleFirstCharOfNumber)
 
 app.get('/kek', (req, res) => {
   res.send(JSON.stringify(x))
