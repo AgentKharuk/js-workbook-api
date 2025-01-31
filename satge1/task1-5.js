@@ -1,10 +1,11 @@
-function showEqualityFirstCharInWords(x, y, indexToCheck) {
-    // const INDEX_OF_CHAR_TO_CHECK = 0;
+export function showEqualityFirstCharInWords(x, y, indexToCheck) {
     const firstChar = x.charAt(indexToCheck);
     const secondChar = y.charAt(indexToCheck);
     if (firstChar === secondChar) {
-        console.log("совпадают"); 
+        console.log("совпадают");
+        return 'совпадают'; 
     } else {
         console.log("не совпадают");
+        return 'не совпадают';
     }
 }
