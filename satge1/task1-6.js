@@ -1,10 +1,12 @@
-function showLastCharExceptSoftSign(x) {
-    const lastChar = x.length -1; 
-    if (x.charAt(lastChar) === "ь") {
-        const penultimateChar = x.length -2;
-        console.log(x.charAt(penultimateChar))
+export function showLastCharExceptSoftSign(str) {
+    const lastChar = str.length -1; 
+    if (str.charAt(lastChar) === "ь") {
+        const penultimateChar = str.length -2;
+        console.log(str.charAt(penultimateChar));
+        return str.charAt(penultimateChar);
     } else {
-        console.log(x.charAt(lastChar))
+        console.log(str.charAt(lastChar));
+        return str.charAt(lastChar);
     }
 }  
     
