@@ -4,6 +4,7 @@ import { showNumberIsPositive } from './satge1/task1-1.js'
 import { showLength } from './satge1/task1-2.js'
 import { showLastSymbol } from './satge1/task1-3.js'
 import { showNumberIsEven } from './satge1/task1-4.js'
+import { showEqualityFirstCharInWords } from './satge1/task1-5.js'
 import {showNumberIsPositive} from './satge1/task1-1.js'
 const app = express()
 const port = 3000
@@ -49,6 +50,14 @@ let handleNumberIsEven = (req, res) => {
 }
 
 app.get('/chek-number-is-even', handleNumberIsEven)
+
+let handelEqualityFirstCharInWords = (req, res) => {
+  console.log("hi: ", req.query)
+  let value = showEqualityFirstCharInWords(req.query.x, req.query.y, Number(req.query.index_to_check))
+  res.send(value)
+}
+
+app.get('/chek-equality-first-char-in-words', handelEqualityFirstCharInWords)
 
 app.get('/chek-number-is-positive', handler)
 
