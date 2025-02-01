@@ -3,6 +3,7 @@
  * @param {number} x number to process
  * @returns {void}
  */
-function showQuantityOfNumbers(number) {
-   console.log (number.toString().length);
+export function showQuantityOfNumbers(num) {
+   console.log (num.toString().length);
+   return 'количество цифр =' + (num.toString().length);
 }
