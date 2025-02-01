@@ -8,6 +8,7 @@ import { showEqualityFirstCharInWords } from './satge1/task1-5.js'
 import { showLastCharExceptSoftSign } from './satge1/task1-6.js'
 import { showFirstCharOfNumber } from './stage2/task2-1.js'
 import { showLastCharOfNumber } from './stage2/task2-2.js'
+import { showSumOfFirstAndLastCharOfNumber } from './stage2/task2-3.js'
 
 const app = express()
 const port = 3000
@@ -85,6 +86,15 @@ let handleLastCharOfNumber = (req, res) => {
 }
 
 app.get('/chek-last-char-of-number', handleLastCharOfNumber)
+
+let handleSumOfFirstAndLastCharOfNumber = (req, res) => {
+  console.log("hi: ", req.query)
+  let value = showSumOfFirstAndLastCharOfNumber(req.query.num)
+  res.send(value)
+}
+
+app.get('/chek-sum-of-first-and-last-char-of-number', handleSumOfFirstAndLastCharOfNumber)
+
 
 app.get('/kek', (req, res) => {
   res.send(JSON.stringify(x))
