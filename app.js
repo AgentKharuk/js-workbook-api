@@ -10,6 +10,7 @@ import { showFirstCharOfNumber } from './stage2/task2-1.js'
 import { showLastCharOfNumber } from './stage2/task2-2.js'
 import { showSumOfFirstAndLastCharOfNumber } from './stage2/task2-3.js'
 import { showQuantityOfNumbers } from './stage2/task2-4.js'
+import { showCoincidenceOfFirstDigitsOfTwoNumbers } from './stage2/task2-5.js'
 
 const app = express()
 const port = 3000
@@ -104,6 +105,13 @@ let handleQuantityOfNumbers = (req, res) => {
 
 app.get('/chek-quantity-of-numbers', handleQuantityOfNumbers)
 
+let handleCoincidenceOfFirstDigitsOfTwoNumbers = (req, res) => {
+  console.log("hi: ", req.query)
+  let value = showCoincidenceOfFirstDigitsOfTwoNumbers(req.query.first_num, req.query.second_num,)
+  res.send(value)
+}
+
+app.get('/chek-coincidence-of-first-digits-of-two-numbers', handleCoincidenceOfFirstDigitsOfTwoNumbers)
 
 app.get('/kek', (req, res) => {
   res.send(JSON.stringify(x))
