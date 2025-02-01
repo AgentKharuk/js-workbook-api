@@ -7,6 +7,7 @@ import { showNumberIsEven } from './satge1/task1-4.js'
 import { showEqualityFirstCharInWords } from './satge1/task1-5.js'
 import { showLastCharExceptSoftSign } from './satge1/task1-6.js'
 import { showFirstCharOfNumber } from './stage2/task2-1.js'
+import { showLastCharOfNumber } from './stage2/task2-2.js'
 
 const app = express()
 const port = 3000
@@ -76,6 +77,14 @@ let handleFirstCharOfNumber = (req, res) => {
 }
 
 app.get('/chek-first-char-of-number', handleFirstCharOfNumber)
+
+let handleLastCharOfNumber = (req, res) => {
+  console.log("hi: ", req.query)
+  let value = showLastCharOfNumber(req.query.num)
+  res.send(value)
+}
+
+app.get('/chek-last-char-of-number', handleLastCharOfNumber)
 
 app.get('/kek', (req, res) => {
   res.send(JSON.stringify(x))
