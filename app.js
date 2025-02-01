@@ -9,6 +9,7 @@ import { showLastCharExceptSoftSign } from './satge1/task1-6.js'
 import { showFirstCharOfNumber } from './stage2/task2-1.js'
 import { showLastCharOfNumber } from './stage2/task2-2.js'
 import { showSumOfFirstAndLastCharOfNumber } from './stage2/task2-3.js'
+import { showQuantityOfNumbers } from './stage2/task2-4.js'
 
 const app = express()
 const port = 3000
@@ -94,6 +95,14 @@ let handleSumOfFirstAndLastCharOfNumber = (req, res) => {
 }
 
 app.get('/chek-sum-of-first-and-last-char-of-number', handleSumOfFirstAndLastCharOfNumber)
+
+let handleQuantityOfNumbers = (req, res) => {
+  console.log("hi: ", req.query)
+  let value = showQuantityOfNumbers(req.query.num)
+  res.send(value)
+}
+
+app.get('/chek-quantity-of-numbers', handleQuantityOfNumbers)
 
 
 app.get('/kek', (req, res) => {
